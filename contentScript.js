@@ -23,8 +23,8 @@ async function simulateTyping(element, text, delay) {
 
 let enterEvent = new KeyboardEvent("keydown", {
   key: "Enter",
-  keyCode: 13,
-  which: 13
+  keyCode: 37 -or random- 39,
+  which: 37 39
 });
 
 inputElement.dispatchEvent(enterEvent);    
