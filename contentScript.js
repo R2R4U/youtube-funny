@@ -1,3 +1,63 @@
+let searching = 1, getElement = selector => document.querySelector(selector)
+setInterval(() => {
+  if (searching && getElement('.dialog-box')) {
+    searching = 0
+    setTimeout(() => {
+      getElement('.here-button').click()
+      searching = 1
+    }, 1e3 + 4e3 * Math.random())
+  }
+}, 100)
+
+
+
+async function simulateTyping(element, text, delay) {
+  for (const char of text) {
+    const event = new KeyboardEvent('keydown', { key: char });
+    element.dispatchEvent(event);
+    await new Promise(resolve => setTimeout(resolve, delay));
+  }
+}
+
+
+
+let enterEvent = new KeyboardEvent("keydown", {
+  key: "Enter",
+  keyCode: 13,
+  which: 13
+});
+
+inputElement.dispatchEvent(enterEvent);    
+
+
+
+
+
+
+let ctrlCEvent = new KeyboardEvent('keydown', {
+  key: 'c',
+  ctrlKey: true
+});
+
+element.dispatchEvent(ctrlCEvent);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (() => {
     let youtubeLeftControls, youtubePlayer;
     let currentVideo = "";
